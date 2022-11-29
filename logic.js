@@ -26,7 +26,7 @@ $(document).ready(function () {
         } else {
             $(".game").slideUp(),
                 $(".name").addClass("pos1"),
-                $(".name").html("<h2 style='color:gold'>PLAYER ONE</h2>" + newplayer.val()),
+                $(".name").html("<h2 style='color:gold'>PLAYER ONE</h2>" + newplayer.val().toUpperCase()),
                 $(".but2").removeAttr('disabled');
 
 
@@ -51,7 +51,7 @@ $(document).ready(function () {
                 $(".name2").addClass("pos2"),
                 $(document.body).addClass("back"),
 
-                $(".name2").html("<h2 style='color:gold'>PLAYER TWO </h2>" + newplayer2.val()),
+                $(".name2").html("<h2 style='color:gold'>PLAYER TWO </h2>" + newplayer2.val().toUpperCase()),
                 $("#play-now").slideDown(500),
 
                 $("#x-o").slideDown();
@@ -98,9 +98,7 @@ let squares = [];
 function end(num1, num2, num3) {
 
     title.innerHTML = "<h4 style='color:gold'>" + `${win.innerHTML}` + "</h4>" + "The Winner";
-    document.getElementById('item' + num1).style.backgroundColor = '#222';
-    document.getElementById('item' + num2).style.backgroundColor = '#222';
-    document.getElementById('item' + num3).style.backgroundColor = '#222';
+   
     document.getElementById('item' + num1).style.color = 'gold';
     document.getElementById('item' + num2).style.color = 'gold';
     document.getElementById('item' + num3).style.color = 'gold';
@@ -194,7 +192,7 @@ function gameid(id) {
         element.style.backgroundColor = '#111';
         turn = 'O';
 
-        win.innerHTML = newplayer.val();
+        win.innerHTML = newplayer.val().toUpperCase();
         playnow.style.display = 'none';
         playnow2.style.display = 'block';
 
@@ -210,7 +208,7 @@ function gameid(id) {
 
         turn = 'X';
 
-        win.innerHTML = newplayer2.val();
+        win.innerHTML = newplayer2.val().toUpperCase();
         playnow2.style.display = 'none';
         playnow.style.display = 'block';
 
